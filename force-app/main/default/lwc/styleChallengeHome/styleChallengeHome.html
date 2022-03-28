@@ -1,0 +1,103 @@
+<template>
+    <lightning-card title="Travel Manager" icon-name="standard:travel_mode">
+        <!-- Begin card actions -->
+        <div slot="actions">
+            <lightning-button-group class="main-actions">
+                <lightning-button label="Refresh" icon-name="utility:refresh"></lightning-button>
+                <lightning-button label="Save" icon-name="utility:save"></lightning-button>
+                <lightning-button label="Delete" icon-name="utility:delete"></lightning-button>
+            </lightning-button-group>
+        </div>
+        <!-- End card actions -->
+
+        <!-- Begin card body -->
+        <div class="slds-card__body slds-card__body_inner">
+            <div class="slds-grid">
+                <!-- Begin search form column -->
+                <div class="search-form-col slds-size_1-of-4 slds-var-m-right_medium">
+                    <lightning-tabset>
+                        <!-- Begin air tab -->
+                        <lightning-tab label="Air" icon-name="custom:custom20">
+                            <form action="#">
+                                <lightning-combobox
+                                    label="Trip Type"
+                                    options={tripTypeOptions}
+                                    value="option1"
+                                    type="button"
+                                ></lightning-combobox>
+                                <lightning-input
+                                    type="text"
+                                    label="From"
+                                    value="CDG - Paris Charles de Gaulle Airport"
+                                ></lightning-input>
+                                <lightning-input
+                                    type="text"
+                                    label="To"
+                                    value="SFO - San Francisco Airport"
+                                ></lightning-input>
+                                <lightning-slider
+                                    label="Max Flight Segments"
+                                    value="2"
+                                    min="1"
+                                    max="3"
+                                ></lightning-slider>
+                                <div class="slds-align_absolute-center slds-var-m-vertical_medium">
+                                    <lightning-button
+                                        label="Search"
+                                        variant="brand"
+                                    ></lightning-button>
+                                </div>
+                            </form>
+                        </lightning-tab>
+                        <!-- End air tab -->
+
+                        <lightning-tab label="Rail" icon-name="custom:custom36"></lightning-tab>
+                        <lightning-tab label="Car" icon-name="custom:custom31"></lightning-tab>
+                    </lightning-tabset>
+                </div>
+                <!-- End search form column -->
+
+                <!-- Begin results column -->
+                <div
+                    class="search-results-col slds-size_3-of-4 slds-border_left slds-var-p-horizontal_medium"
+                >
+                    <h2 class="slds-text-heading_medium">
+                        Found <lightning-badge label="3"></lightning-badge> results
+                    </h2>
+                    <lightning-accordion allow-multiple-sections-open active-section-name="A">
+                        <lightning-accordion-section name="A" label="Option A">
+                            <div class="slds-grid">
+                                <div class="slds-var-p-horizontal_medium">
+                                    Donec vitae tellus egestas, faucibus ipsum ac, imperdiet erat.
+                                    Nam venenatis non ante at sagittis. Integer vel purus eget nunc
+                                    semper placerat. Nam tristique quam leo, et posuere enim
+                                    condimentum quis. Ut sagittis libero id lectus tempor maximus.
+                                    Nunc ut tincidunt eros, a hendrerit leo. Suspendisse quis
+                                    fermentum dolor. Nulla euismod consectetur leo, id condimentum
+                                    nunc consequat quis.
+                                </div>
+                                <lightning-button
+                                    label="Book"
+                                    variant="brand"
+                                    class="slds-col_bump-right"
+                                ></lightning-button>
+                            </div>
+                        </lightning-accordion-section>
+
+                        <lightning-accordion-section name="B" label="Option B">
+                        </lightning-accordion-section>
+
+                        <lightning-accordion-section name="C" label="Option C">
+                        </lightning-accordion-section>
+                    </lightning-accordion>
+                </div>
+                <!-- End results column -->
+            </div>
+        </div>
+        <!-- End card body -->
+
+        <div slot="footer">
+            LWC Style Challenge - Template built with 💜 by the Salesforce Developer Advocacy team
+        </div>
+    </lightning-card>
+</template>

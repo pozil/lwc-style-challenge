@@ -1,0 +1,22 @@
+{
+    "name": "lwc-style-challenge",
+    "private": true,
+    "version": "1.0.0",
+    "description": "LWC Style Challenge",
+    "scripts": {
+        "prettier": "prettier --write \"**/*.{css,html,js,json,md,page,trigger,yaml,yml}\"",
+        "prettier:verify": "prettier --list-different \"**/*.{css,html,js,json,md,page,trigger,yaml,yml}\"",
+        "postinstall": "husky install",
+        "precommit": "lint-staged"
+    },
+    "devDependencies": {
+        "husky": "^7.0.0",
+        "lint-staged": "^11.0.0",
+        "prettier": "^2.3.2"
+    },
+    "lint-staged": {
+        "**/*.{css,html,js,json,md,page,trigger,yaml,yml}": [
+            "prettier --write"
+        ]
+    }
+}
